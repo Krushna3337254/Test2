@@ -1,0 +1,37 @@
+<resources>
+    <string name="app_name">Test</string>
+    <string name="title_activity_add_student">AddStudentActivity</string>
+    <string-array name="blood_array">
+        <item>Enter BloodGroup</item>
+        <item>O+ve</item>
+        <item>O-ve</item>
+        <item>AB+ve</item>
+        <item>AB-ve</item>
+        <item>A+ve</item>
+        <item>B+ve</item>
+        <item>A-ve</item>
+        <item>B-ve</item>
+    </string-array>
+
+    <string-array name="class_array">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+    </string-array>
+
+    <string-array name="Div_array">
+        <item>A</item>
+        <item>B</item>
+        <item>C</item>
+        <item>D</item>
+        <item>E</item>
+
+    </string-array>
+</resources>
