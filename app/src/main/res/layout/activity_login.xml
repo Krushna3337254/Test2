@@ -58,7 +58,7 @@
         android:layout_marginTop="14dp"
         android:ems="10"
         android:hint="Type your Email Address"
-        android:inputType="textPersonName" />
+        android:inputType="textEmailAddress" />
 
 
     <TextView
@@ -86,7 +86,7 @@
         android:layout_marginTop="421dp"
         android:ems="10"
         android:hint="Type your Password"
-        android:inputType="textPassword" />
+        android:inputType="textPassword|numberPassword" />
 
     <Button
         android:id="@+id/login"

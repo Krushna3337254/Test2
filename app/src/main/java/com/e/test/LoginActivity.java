@@ -11,7 +11,8 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class LoginActivity extends AppCompatActivity {
-    EditText e,p;
+    EditText e;
+    EditText p;
     Button login;
 
     @Override
@@ -26,9 +27,15 @@ public class LoginActivity extends AppCompatActivity {
         login.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
+                if(e.getText().toString().equals("knr3337254@gmail.com") && p.getText().toString().equals("3337254")){
                 Intent intent=new Intent(LoginActivity.this,Showadd.class);
                 startActivity(intent);
                 Toast.makeText(LoginActivity.this, "Login successful....", Toast.LENGTH_SHORT).show();
+            }
+            else {
+                    Toast.makeText( LoginActivity.this, "Username and Password doesn't match", Toast.LENGTH_SHORT ).show();
+                }
+
             }
         });
     }

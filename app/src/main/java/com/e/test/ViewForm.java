@@ -1,17 +1,27 @@
 package com.e.test;
 
+import android.content.Context;
+import android.database.sqlite.SQLiteDatabase;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
+import android.view.inputmethod.InputMethodManager;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.RadioGroup;
 import android.widget.Spinner;
 import android.widget.Toast;
 
-    public class ViewForm extends AppCompatActivity implements AdapterView.OnItemSelectedListener, RadioGroup.OnCheckedChangeListener {
+import java.util.List;
+
+public class ViewForm extends AppCompatActivity implements AdapterView.OnItemSelectedListener, RadioGroup.OnCheckedChangeListener, View.OnClickListener {
         Spinner sc,sd;
         RadioGroup radiogrp1;
+        Button v;
+
+        SQLiteDatabase db;              //creating object for SQLite database
+
         @Override
         protected void onCreate(Bundle savedInstanceState) {
             super.onCreate(savedInstanceState);
@@ -24,6 +34,16 @@ import android.widget.Toast;
 
             radiogrp1=findViewById(R.id.radioGroup1);
             radiogrp1.setOnCheckedChangeListener(this);
+
+            v=findViewById( R.id.btnForm );
+            v.setOnClickListener( this );
+
+
+
+
+            db = openOrCreateDatabase( "StudentDB", Context.MODE_PRIVATE, null );                    //opening or creating databasefrom invoking object
+            db.execSQL( "CREATE TABLE IF NOT EXISTS student(rollno VARCHAR,name VARCHAR,marks VARCHAR);" );    //crreating table by firing sql Query
+
 
             // Create an ArrayAdapter using the string array and a default spinner layout
             ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(this,
@@ -67,4 +87,11 @@ import android.widget.Toast;
 
             }
         }
-    }
+
+
+
+        @Override
+        public void onClick(View v) {
+
+        }
+}
